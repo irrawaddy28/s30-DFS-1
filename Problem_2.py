@@ -135,7 +135,7 @@ def updateMatrix_bfs(mat):
             if mat[i][j] == 0:
                 q.append((i,j))
             else:
-                mat[i][j] == -1
+                mat[i][j] = -1
 
     # At each level, enque all cells containing -1 (originally 1s). These cells are at a distance level+1 from 0.
     # At lvl 0, queue should have all cells containing 0s
@@ -214,7 +214,7 @@ def run_updateMatrix():
                 [2,1,1,1,1,2,1,0,1,0],
                 [3,2,2,1,0,1,0,0,1,1]]
             ),]
-    tests = [([[0,0,0],[0,1,0],[1,1,1]],[[0,0,0],[0,1,0],[1,2,1]])]
+
     for test in tests:
         mat, ans = test[0], test[1]
         for method in ['dfs', 'bfs', 'bfs_level_agnostic']:
